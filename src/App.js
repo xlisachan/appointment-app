@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import AptList from './AptList';
+import AddAppointment from './AddAppointment';
 
 var _ = require('lodash');
 
 class MainInterface extends Component {
   state = {
+      aptBodyVisible: false,
       myAppointments: []
   }
 
@@ -24,6 +26,13 @@ class MainInterface extends Component {
     })
   }
 
+  toggleAddDisplay = () => {
+    var tempVisibility = !this.state.aptBodyVisible;
+    this.setState({
+      aptBodyVisible: tempVisibility
+    })
+  }
+
   render() {
     var filteredApts = this.state.myAppointments;
     filteredApts = filteredApts.map((item,index) => {
@@ -36,6 +45,8 @@ class MainInterface extends Component {
     })
     return (
       <div className="interface">
+        <AddAppointment bodyVisible={ this.state.aptBodyVisible }
+                        handleToggle = { this.toggleAddDisplay }/>
         <ul className="item-list media-list">{ filteredApts }</ul>
       </div>
     );
