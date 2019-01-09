@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 
 class SearchAppointments extends Component {
+    handleSort = e => {
+        this.props.onReorder(e.target.id, this.props.orderDir);
+    }
+
+    handleOrder = e => {
+        this.props.onReorder(this.props.orderBy, e.target.id);
+    }
+    
     render() {
         return (
             <div className="row search-appointments">

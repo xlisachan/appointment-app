@@ -9,6 +9,8 @@ var _ = require('lodash');
 class MainInterface extends Component {
   state = {
       aptBodyVisible: false,
+      orderBy: 'petName',
+      orderDir: 'asc',
       myAppointments: []
   }
 
@@ -42,8 +44,22 @@ class MainInterface extends Component {
     })
   }
 
+  reOrder = (orderBy, orderDir) => {
+    this.setState({
+      orderBy: orderBy,
+      orderDir: orderDir
+    })
+  }
+
   render() {
     var filteredApts = this.state.myAppointments;
+    var orderBy = this.state.orderBy;
+    var orderDir = this.state.orderDir;
+
+    filteredApts = _.orderBy(filteredApts, item => {
+      return item[orderBy].toLowerCase();
+    }, orderDir)
+
     filteredApts = filteredApts.map((item,index) => {
       return (
         <AptList key = { index }
@@ -58,7 +74,9 @@ class MainInterface extends Component {
         <AddAppointment bodyVisible={ this.state.aptBodyVisible }
                         handleToggle = { this.toggleAddDisplay }
                         addApt = { this.addItem }/>
-        <SearchAppointments />
+        <SearchAppointments orderBy = { this.state.orderBy }
+                            orderDir = { this.state.orderDir } 
+                            onReorder = { this.reOrder } />
         <ul className="item-list media-list">{ filteredApts }</ul>
       </div>
     );
