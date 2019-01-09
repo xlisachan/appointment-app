@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class AptList extends Component {
+    handleDelete = () => {
+        this.props.onDelete(this.props.whichItem)
+    }
+    
     render() {
       return (
         <li className="pet-item media">
