@@ -15,7 +15,7 @@ class AddApointment extends React.Component {
         this.props.addApt(tempItem);
         e.preventDefault();
     }
-    
+
     render() {
         var displayAptBody = {
             display: this.props.bodyVisible ? 'block' : 'none'

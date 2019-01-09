@@ -8,7 +8,10 @@ class SearchAppointments extends Component {
     handleOrder = e => {
         this.props.onReorder(this.props.orderBy, e.target.id);
     }
-    
+
+    handleSearch = e => {
+        this.props.onSearch(e.target.value);
+    }
     render() {
         return (
             <div className="row search-appointments">
