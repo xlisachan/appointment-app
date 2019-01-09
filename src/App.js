@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
+import AptList from './AptList';
 
 class MainInterface extends Component {
+  state = {
+      myAppointments: []
+  }
+
+  componentDidMount() {
+    var data = require('./data.json');
+    this.setState({
+      myAppointments: data
+    })
+  }
+
   render() {
+    var filteredApts = this.state.myAppointments;
+    filteredApts = filteredApts.map((item,index) => {
+      return (
+        <AptList key = { index }
+                singleItem = { item } />
+      )
+    })
     return (
       <div className="interface">
-        <h1>Pet Appointments</h1>
-        <ul>
-          <li>Buffy 3:30PM</li>
-          <li>Spot 5:30PM</li>
-          <li>Goldie 8:30AM</li>
-        </ul>
+        <ul className="item-list media-list">{ filteredApts }</ul>
       </div>
     );
   }
