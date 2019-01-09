@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import AptList from './AptList';
 import AddAppointment from './AddAppointment';
+import SearchAppointments from './SearchAppointments';
 
 var _ = require('lodash');
 
@@ -57,6 +58,7 @@ class MainInterface extends Component {
         <AddAppointment bodyVisible={ this.state.aptBodyVisible }
                         handleToggle = { this.toggleAddDisplay }
                         addApt = { this.addItem }/>
+        <SearchAppointments />
         <ul className="item-list media-list">{ filteredApts }</ul>
       </div>
     );
