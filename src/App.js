@@ -33,6 +33,14 @@ class MainInterface extends Component {
     })
   }
 
+  addItem = (tempItem) => {
+    var tempApts = this.state.myAppointments;
+    tempApts.push(tempItem);
+    this.setState({
+      myAppointments: tempApts
+    })
+  }
+
   render() {
     var filteredApts = this.state.myAppointments;
     filteredApts = filteredApts.map((item,index) => {
@@ -43,10 +51,12 @@ class MainInterface extends Component {
                 onDelete = { this.deleteAppointment } />
       )
     })
+
     return (
       <div className="interface">
         <AddAppointment bodyVisible={ this.state.aptBodyVisible }
-                        handleToggle = { this.toggleAddDisplay }/>
+                        handleToggle = { this.toggleAddDisplay }
+                        addApt = { this.addItem }/>
         <ul className="item-list media-list">{ filteredApts }</ul>
       </div>
     );

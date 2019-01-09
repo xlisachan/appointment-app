@@ -4,6 +4,17 @@ class AddApointment extends React.Component {
     toggleAptDisplay = () => {
         this.props.handleToggle();
     }
+
+    handleAdd = (e) => {
+        var tempItem = {
+            petName: this.refs.inputPetName.value,
+            ownerName: this.refs.inputOwnerName.value,
+            aptDate: this.refs.inputAptDate.value + ' ' + this.refs.inputAptTime.value,
+            aptNotes: this.refs.inputAptNotes.value
+        }
+        this.props.addApt(tempItem);
+        e.preventDefault();
+    }
     
     render() {
         var displayAptBody = {
