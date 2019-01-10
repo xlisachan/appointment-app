@@ -1,4 +1,4 @@
-# <a href="https://xlisachan.github.io/appointment-app/">Appointment Manager</a>
+# Appointment Manager
 * Replicated a user interface for a pet clinic using React
 * Demonstrated understanding of React and its component architecture, ability to handle events, break code into custom subcomponents, manage form fields with references, and set up sorting and search
 
@@ -12,9 +12,6 @@
 
 # Built With
 * React, JavaScript, HTML, Bootstrap
-
-# Deployment
-<a href="https://xlisachan.github.io/appointment-app/">https://xlisachan.github.io/appointment-app/</a>
 
 <img src="https://raw.githubusercontent.com/xlisachan/appointment-app/master/public/WisdomPetMedicine-Screenshot.png">
 
