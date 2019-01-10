@@ -1,6 +1,6 @@
 # <a href="https://xlisachan.github.io/appointment-app/">Appointment Manager</a>
-* Replicate a user interface for a pet clinic using React
-* Demonstrate understanding of React and its component architecture, ability to handle events, break code into custom subcomponents, manage form fields with references, and set up sorting and search
+* Replicated a user interface for a pet clinic using React
+* Demonstrated understanding of React and its component architecture, ability to handle events, break code into custom subcomponents, manage form fields with references, and set up sorting and search
 
 # Features and Functionality
 * Built simple interface that allows user to:<br/>
