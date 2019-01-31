@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../stylesheets/App.css';
 import AptList from './AptList';
 import AddAppointment from './AddAppointment';
 import SearchAppointments from './SearchAppointments';
@@ -16,7 +16,7 @@ class MainInterface extends Component {
   }
 
   componentDidMount() {
-    var data = require('./data.json');
+    var data = require('../../src/data.json');
     this.setState({ 
       myAppointments: data
     })
